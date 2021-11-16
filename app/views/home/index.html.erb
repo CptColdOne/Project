@@ -1,3 +1,7 @@
-<%= react_component("Home/home")%>
-<div >Здравствуйте, <%= current_user.username %>!</div>
-<%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+<%= react_component("Home/home", {name: current_user.username})%>
+<!--<div >Здравствуйте, <%= current_user.username %>!</div> -->
+<p><%= link_to "Изменить регистрационные данные", edit_user_registration_path %></p>
+<p><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></p>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>

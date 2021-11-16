@@ -1,16 +1,17 @@
 import React from "react";
 import "./home.scss";
 
-class Home extends React.Component {
+export default class Home extends React.Component {
     render() {
         return (
             <React.Fragment>
                 <div className='home-page'>
-                    User Homepage
+                    Домашняя страница {this.props.name}
+                </div>
+                <div>
+                    Здравствуйте, {this.props.name}!
                 </div>
             </React.Fragment>
         );
     };
 };
-
-export default Home
