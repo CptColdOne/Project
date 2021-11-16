@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+$col1: rgb(67, 67, 73);
+$font: "PT Sans";
+
+.header{
+    font-family: $font;
+    font-weight: 700;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.field{
+    font-family: $font;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.actions{
+    display: flex;	
+    justify-content: center;
+}
+
+.button{
+    font-family: $font;
+    font-weight: 700;
+    font-size: 15px;
+    display: block;	
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 0 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform .8s ease-in-out;
+}
+
+.button:hover{
+    transform: scale(1.1);
+    transition: transform .8s ease-in-out;;
+}
+
+.button:active{
+    animation: anim 1s;
+}
+
+@keyframes anim {
+    0% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

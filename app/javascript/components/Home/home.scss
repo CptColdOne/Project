@@ -1,5 +1,22 @@
-.home-page{
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+$col1: rgb(67, 67, 73);
+$font: "PT Sans";
+
+.home-page-header{
+    font-family: $font;
+    font-weight: 700;
+    font-size: 30px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    text-align: center;
+}
+
+.home-page{
+    font-family: $font;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
 }
