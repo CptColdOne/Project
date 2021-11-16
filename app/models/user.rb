@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :authentication_keys => [:login]
 
+  validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   attr_writer :login
 
   def login
