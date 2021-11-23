@@ -4,7 +4,8 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.where(:user_id => current_user.id)
+    #@posts = Post.where(:user_id => current_user.id)
+    @posts = Post.all
   end
 
   # GET /posts/1 or /posts/1.json
@@ -19,6 +20,11 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @post = Post.find(params[:id])
+    unless current_user?(@post.user)
+      #redirect_to root_path
+      flash.alert = 'Пост может редактировать только автор!'
+    end
   end
 
   # POST /posts or /posts.json
@@ -40,23 +46,34 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to @post, notice: "Post was successfully updated." }
-        format.json { render :show, status: :ok, location: @post }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+    @post = Post.find(params[:id])
+    if current_user?(@post.user)
+      respond_to do |format|
+        if @post.update(post_params)
+          format.html { redirect_to @post, notice: "Post was successfully updated." }
+          format.json { render :show, status: :ok, location: @post }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      #redirect_to root_path
+      flash.alert = 'Пост может редактировать только автор!'
     end
   end
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
-    @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
-      format.json { head :no_content }
+    @post = Post.find(params[:id])
+    if current_user?(@post.user)
+      @post.destroy
+      respond_to do |format|
+        format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    else
+      flash.alert = 'Пост может удалить только автор!'
     end
   end
 

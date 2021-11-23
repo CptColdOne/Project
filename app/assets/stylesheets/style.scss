@@ -12,6 +12,24 @@ $font: "PT Sans";
     text-align: center;
 }
 
+.posts{
+    font-family: $font;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+table{
+    width: 1200px;
+    margin: auto;
+}
+
+td{
+    text-align: center;
+}
+
 .field{
     font-family: $font;
     font-weight: 400;

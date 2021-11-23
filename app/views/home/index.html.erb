@@ -1,5 +1,6 @@
 <%= react_component("Home/home", {name: current_user.username, email: current_user.email, telephone: current_user.telephone})%>
 <!-- <div >Здравствуйте, <%= current_user.username %>!</div> -->
+<div class="posts">
 <p><table>
   <thead>
     <tr>
@@ -25,7 +26,8 @@
     <% end %>
   </tbody>
 </table></p>
-<!-- <%= link_to 'Посмотреть посты', posts_path %> -->
-<%= link_to 'Новый пост', new_post_path %>
+</div>
+<p><%= link_to 'Посмотреть все посты', posts_path %></p>
+<p><%= link_to 'Новый пост', new_post_path %></p>
 <p><%= link_to "Изменить регистрационные данные", edit_user_registration_path %></p>
 <p><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></p>
