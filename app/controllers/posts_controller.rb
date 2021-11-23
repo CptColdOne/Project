@@ -13,6 +13,11 @@ class PostsController < ApplicationController
     @post.increment!(:total_views)
   end
 
+  def hashtags
+    tag = Tag.find_by(name: params[:name])
+    @posts = tag.posts
+  end
+  
   # GET /posts/new
   def new
     @post = Post.new

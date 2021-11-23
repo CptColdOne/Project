@@ -17,7 +17,7 @@
       <tr>
         <td><%= post.title %></td>
         <td style='width:400px; height:auto'><%= image_tag(post.image, style:'width:100%') %></td>
-        <td><%= post.caption %></td>
+        <td><%= render_with_hashtags(post.caption) %></td>
         <td><%= post.total_views %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
