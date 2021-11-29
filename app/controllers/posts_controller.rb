@@ -5,7 +5,14 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     #@posts = Post.where(:user_id => current_user.id)
-    @posts = Post.all
+    posts = Post.all
+    @posts = []
+      posts.each do |post|
+          temp_post = post.attributes
+          temp_post['image'] = url_for(post.image)
+          temp_post['post_link'] = url_for(post)
+          @posts.push(temp_post) 
+      end 
   end
 
   # GET /posts/1 or /posts/1.json

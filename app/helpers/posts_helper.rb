@@ -1,5 +1,5 @@
 module PostsHelper
     def render_with_hashtags(caption)
-    caption.gsub(/#\w+/){|word| link_to word, "/posts/hashtag/#{word.delete('#')}"}.html_safe
+        caption.gsub(/#\w+/){|word| link_to word, "/posts/hashtag/#{word.delete('#')}"}.html_safe
     end
 end

@@ -7,6 +7,8 @@ class HomeController < ApplicationController
         posts.each do |post|
             temp_post = post.attributes
             temp_post['image'] = url_for(post.image)
+            temp_post['post_link'] = url_for(post)
+            temp_post['post_link_edit'] = url_for(edit_post_path(post))
             @posts.push(temp_post) 
         end 
     end

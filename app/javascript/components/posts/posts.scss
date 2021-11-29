@@ -3,7 +3,7 @@
 $col1: rgb(67, 67, 73);
 $font: "PT Sans";
 
-.home-page-header{
+.posts-header{
     font-family: $font;
     font-weight: 700;
     font-size: 30px;
@@ -12,7 +12,7 @@ $font: "PT Sans";
     text-align: center;
 }
 
-.home-page{
+.posts-page{
     font-family: $font;
     font-weight: 400;
     font-size: 20px;
@@ -22,13 +22,13 @@ $font: "PT Sans";
     justify-content: center;
 }
 
-.home-page .img{
+.posts-page .img{
     align-items: center;
     width: 600px;
     display: flex;
     margin: auto;
 }
-.home-page .section {
+.posts-page .section {
     font-family: $font;
     font-style: italic;
     font-size: 30px;

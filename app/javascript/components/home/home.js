@@ -1,6 +1,7 @@
 import React from "react";
 import "./home.scss";
-import UserPosts from "./UserPosts";
+import HomePosts from "./homeposts";
+import HomeButtons from "./homebuttons";
 
 export default class Home extends React.Component {
     constructor(props){
@@ -30,7 +31,8 @@ export default class Home extends React.Component {
                 <div> 
                     {this.renderHeader()}
                     {this.renderPageBody()}
-                    <UserPosts posts={this.props.posts}/>
+                    <HomePosts posts={this.props.posts}/>
+                    <HomeButtons posts_path={this.props.posts_path} new_post_path={this.props.new_post_path} edit_user_registration_path={this.props.edit_user_registration_path}/>
                 </div>
             </React.Fragment>
         );
