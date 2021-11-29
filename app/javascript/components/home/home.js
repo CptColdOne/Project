@@ -1,7 +1,7 @@
 import React from "react";
 import "./home.scss";
-import HomePosts from "./homeposts";
-import HomeButtons from "./homebuttons";
+import HomePosts from "./home_posts";
+import HomeButtons from "./home_buttons";
 
 export default class Home extends React.Component {
     constructor(props){

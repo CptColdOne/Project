@@ -1,6 +1,6 @@
 import React from "react";
 import "./posts.scss";
-import PostsButtons from "./postsbuttons";
+import PostsButtons from "./posts_buttons";
 
 export default class Posts extends React.Component{
     constructor(props){
@@ -22,7 +22,9 @@ export default class Posts extends React.Component{
                 <div className="img"><img style={{width: '100%', alignSelf: 'center'}} src={item.image} alt=""/></div>
                 <div>{item.caption}</div>
                 <div>Количество просмотров: {item.total_views}</div>
-                <div style={{padding:"10px"}}><a href={item.post_link}><input className="button" style={{margin:"auto"}} type="button" value="Посмотреть пост"></input></a></div>
+                <div style={{padding:"10px"}}>
+                    <a href={item.post_link}><input className="button" style={{margin:"auto"}} type="button" value="Посмотреть пост"></input></a>
+                </div>
               </div>
             )
         })

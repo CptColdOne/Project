@@ -21,9 +21,15 @@ class HomePosts extends React.Component {
           <div className="img"><img style={{width: '100%', alignSelf: 'center'}} src={item.image} alt=""/></div>
           <div>{item.caption}</div>
           <div>Количество просмотров: {item.total_views}</div>
-          <div style={{padding:"10px"}}><a href={item.post_link}><input className="button" style={{margin:"auto"}} type="button" value="Посмотреть пост"></input></a></div>
-          <div style={{padding:"10px"}}><a href={item.post_link_edit}><input className="button" style={{margin:"auto"}} type="button" value="Изменить пост"></input></a></div>
-          <div style={{padding:"10px"}}><input className="button" style={{margin:"auto"}} type="button" value="Удалить пост" onClick={() => this.deletePost(item.post_link)}></input></div>
+          <div style={{padding:"10px"}}>
+            <a href={item.post_link}><input className="button" style={{margin:"auto"}} type="button" value="Посмотреть пост"></input></a>
+          </div>
+          <div style={{padding:"10px"}}>
+            <a href={item.post_link_edit}><input className="button" style={{margin:"auto"}} type="button" value="Изменить пост"></input></a>
+          </div>
+          <div style={{padding:"10px"}}>
+            <input className="button" style={{margin:"auto"}} type="button" value="Удалить пост" onClick={() => this.deletePost(item.post_link)}></input>
+          </div>
         </div>
     )})
   }
