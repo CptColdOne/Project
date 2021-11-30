@@ -1,25 +1,6 @@
 <p id="notice"><%= notice %></p>
+<%= react_component("posts/posts_show", {title: @post.title, image: url_for(@post.image), caption: @post.caption, total_views: @post.total_views})%>
 
-<div class="field">
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<div style='width:800px; height:auto; margin: auto;'>
-  <%= image_tag(@post.image, style:'width:100%') %>
-</div>
-
-<p>
-  <strong>Caption:</strong>
-  <%= @post.caption %>
-</p>
-
-<p>
-  <strong>Views:</strong>
-  <%= @post.total_views %>
-</p>
-</div>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

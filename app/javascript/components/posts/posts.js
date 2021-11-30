@@ -8,7 +8,7 @@ export default class Posts extends React.Component{
         this.state = {
             posts: []
         };
-      }
+    }
 
     componentDidMount(){
         this.setState({posts: this.props.posts})

@@ -6,11 +6,11 @@ export default class PostForm extends React.Component {
         super(props);
         this.state = {
             title: "",
-            image: "",
+            image: undefined,
             caption: "",
         };
         this.handleTitleChange = this.handleTitleChange.bind(this);
-        this.handleImageChange = this.handleImageChange.bind(this);
+        this.handleImageChange = this.onImageChange.bind(this);
         this.handleCaptionChange = this.handleCaptionChange.bind(this);
     }
 
@@ -22,21 +22,36 @@ export default class PostForm extends React.Component {
         })
     }
 
-    handleTitleChange(title){
-        this.setState({title: title.target.value});
+    handleTitleChange(e){
+        this.setState({title: e.target.value});
     }
     
-    handleImageChange(image){
-        this.setState({image: image.target.value});
+    onImageChange(e){
+        this.setState({image: e.target.value[0]});
     }
 
-    handleCaptionChange(caption){
-        this.setState({caption: caption.target.value});
+    handleCaptionChange(e){
+        this.setState({caption: e.target.value});
     }
 
+    handleSubmit(e){
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('title', this.state.title);
+        formData.append('image', this.state.image);
+        formData.append('caption', this.state.caption);
+
+        console.log("start post");
+        fetch('/posts', {
+            method: 'POST',
+            body: formData
+        })
+        .catch(error=>console.log(error));
+    }
+    
     renderForm(){
         return(
-            <div>
+            <form  >
                 <label>Заголовок</label>
                 <input 
                     type="text"
@@ -48,9 +63,9 @@ export default class PostForm extends React.Component {
                 <label>Изображение</label>
                 <input 
                     type="file"
-                    name="post[image]"
-                    value={this.state.image}
-                    onChange={this.handleImageChange}
+                    accept="image/*"
+                    multiple={false}
+                    onChange={this.onImageChange}
                 />
 
                 <label>Описание</label>
@@ -61,8 +76,8 @@ export default class PostForm extends React.Component {
                     onChange={this.handleCaptionChange}
                 />
 
-                <input type="submit" value="Сохранить" />
-            </div>
+                <input type="submit" value="Сохранить" onSubmit={this.handleSubmit} />
+            </form>
         )
     }
 

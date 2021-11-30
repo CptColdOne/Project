@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     #@posts = Post.where(:user_id => current_user.id)
-    posts = Post.all
+    posts = Post.where(:private => false)
     @posts = []
       posts.each do |post|
           temp_post = post.attributes
