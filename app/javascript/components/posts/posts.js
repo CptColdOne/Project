@@ -1,6 +1,7 @@
 import React from "react";
 import "./posts.scss";
 import PostsButtons from "./posts_buttons";
+import ScrollButton from "../home/home_scroll_button";
 
 export default class Posts extends React.Component{
     constructor(props){
@@ -33,9 +34,12 @@ export default class Posts extends React.Component{
     render() {
         return (
             <React.Fragment>
-                <h1 className="posts-header">Посты всех пользователей</h1>
-                {this.renderPosts()}
-                <PostsButtons new_post_path={this.props.new_post_path} root_path={this.props.root_path} />
+                <div>
+                    <h1 className="posts-header">Посты всех пользователей</h1>
+                    {this.renderPosts()}
+                    <PostsButtons new_post_path={this.props.new_post_path} root_path={this.props.root_path} />
+                </div>
+                <ScrollButton />
             </React.Fragment>
         )
     }

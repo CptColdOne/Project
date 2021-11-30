@@ -72,3 +72,26 @@ $font: "PT Sans";
 a{
     text-decoration: none;
 }
+
+.scroll-button {
+    position: fixed;
+    bottom: 80px;
+    right: 50px;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: #f5f5f5;
+    color: #444;
+    cursor: pointer;
+    border-radius: 2px;
+    animation: fadeIn 700ms ease-in-out 1s both;
+}
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
