@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.where("caption LIKE ?", "%" + params[:q] + "%")
+    @posts = Post.where(:private => false).where("caption LIKE ?", "%" + params[:q] + "%")
   end
 
   # GET /posts/1 or /posts/1.json
