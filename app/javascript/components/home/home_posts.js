@@ -40,6 +40,10 @@ class HomePosts extends React.Component {
     fetch(post, {method: "delete"})
   }
 
+  hashtags = (caption) => {
+
+  }
+
   render () {
     return (
       <React.Fragment>

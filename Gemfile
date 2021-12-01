@@ -29,6 +29,8 @@ gem 'aws-sdk-s3', require: false
 gem 'active_storage_validations'
 gem 'rubocop', require: false
 gem 'active_model_serializers'
+gem 'haml'
+gem 'ransack'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   get 'home/index', as: 'user_root'
   get '/posts/hashtag/:name', to: 'posts#hashtags'
+  get 'search', to: 'posts#search' 
 end

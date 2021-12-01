@@ -11,8 +11,13 @@ class PostsController < ApplicationController
           temp_post = post.attributes
           temp_post['image'] = url_for(post.image)
           temp_post['post_link'] = url_for(post)
+          # temp_post['hashtags']
           @posts.push(temp_post) 
       end 
+  end
+
+  def search
+    @posts = Post.where("caption LIKE ?", "%" + params[:q] + "%")
   end
 
   # GET /posts/1 or /posts/1.json
