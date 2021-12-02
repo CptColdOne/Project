@@ -17,7 +17,21 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.where(:private => false).where("caption LIKE ?", "%" + params[:q] + "%")
+    # @posts = Post.where(:private => false).where("caption LIKE ?", "%" + params[:q] + "%")
+    if params[:search].blank?
+      redirect_to posts_path and return
+    else
+      @parameter = params[:search].downcase
+      # @results = Post.where(:private => false).where("lower(caption) LIKE :search", search: "%#{@parameter}%")
+      matchPosts = Post.where(:private => false).where("lower(caption) LIKE ?", "%#{@parameter}%")
+      @matchPosts = []
+      matchPosts.each do |post|
+        temp_post = post.attributes
+        temp_post['image'] = url_for(post.image)
+        temp_post['post_link'] = url_for(post)
+        @matchPosts.push(temp_post)
+      end 
+    end
   end
 
   # GET /posts/1 or /posts/1.json
