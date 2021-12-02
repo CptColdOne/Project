@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
+  protect_from_forgery with: :null_session
 
   # GET /posts or /posts.json
   def index
@@ -98,7 +99,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     if current_user?(@post.user)
-      @post.destroy
+      @post.destroy(params[:id])
       respond_to do |format|
         format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
         format.json { head :no_content }

@@ -42,6 +42,7 @@ export default class Search extends React.Component {
     render () {
         return (
           <React.Fragment>
+            <div className="home-page-header">Результаты поиска: </div>
             {this.renderMatchedPosts()}
             {this.renderBackButton()}
           </React.Fragment>

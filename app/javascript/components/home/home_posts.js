@@ -33,15 +33,15 @@ class HomePosts extends React.Component {
         </div>
     )})
   }
-  // Не получается удалить
-  // Can't verify CSRF token authenticity.
+  
   deletePost = (post) => {
     console.log(post)
-    fetch(post, {method: "delete"})
-  }
-
-  hashtags = (caption) => {
-
+    fetch(post, {
+      method: "delete",
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
   }
 
   render () {
