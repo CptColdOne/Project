@@ -35,12 +35,17 @@ class HomePosts extends React.Component {
   }
   
   deletePost = (post) => {
+    const csrfToken = document.querySelector("[name='csrf-token']").content
     console.log(post)
     fetch(post, {
       method: "delete",
       headers: {
+        "X-CSRF-Token": csrfToken,
         'Content-Type': 'application/json'
       }
+    })
+    .then(() => {
+      window.location.reload();
     })
   }
 

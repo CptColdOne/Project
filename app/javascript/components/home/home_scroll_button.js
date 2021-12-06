@@ -40,7 +40,7 @@ export default class ScrollButton extends React.Component {
             <div>
                 {is_visible && (
                     <div onClick={() => this.scrollToTop()}>
-                        <a class="scroll-button" title="Наверх">&uarr;</a>
+                        <a className="scroll-button" title="Наверх">&uarr;</a>
                     </div>
                 )}
             </div>

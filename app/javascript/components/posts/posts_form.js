@@ -13,6 +13,7 @@ export default class PostForm extends React.Component {
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleImageChange = this.onImageChange.bind(this);
         this.handleCaptionChange = this.handleCaptionChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount(){
@@ -49,7 +50,7 @@ export default class PostForm extends React.Component {
 
         console.log("start post");
         fetch('/posts', {
-            method: 'post',
+            method: 'POST',
             body: formData
         })
         .catch(error=>console.log(error));
