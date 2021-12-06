@@ -1,5 +1,6 @@
+<%# <%= react_component('posts/posts_form', {post: @post})%> %>
+
 <%= form_with(model: post) do |form| %>
-  <!-- <%= react_component('posts/posts_form', {post: @post})%> -->
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>

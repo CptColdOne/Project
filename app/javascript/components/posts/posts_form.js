@@ -8,6 +8,7 @@ export default class PostForm extends React.Component {
             title: "",
             image: undefined,
             caption: "",
+            private: false
         };
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleImageChange = this.onImageChange.bind(this);
@@ -34,16 +35,21 @@ export default class PostForm extends React.Component {
         this.setState({caption: e.target.value});
     }
 
+    handleCaptionChange(e){
+        this.setState({private: e.target.value});
+    }
+
     handleSubmit(e){
         e.preventDefault();
         const formData = new FormData();
         formData.append('title', this.state.title);
         formData.append('image', this.state.image);
         formData.append('caption', this.state.caption);
+        formData.append('private', this.state.private);
 
         console.log("start post");
         fetch('/posts', {
-            method: 'POST',
+            method: 'post',
             body: formData
         })
         .catch(error=>console.log(error));
@@ -74,6 +80,14 @@ export default class PostForm extends React.Component {
                     name="post[caption]"
                     value={this.state.caption}
                     onChange={this.handleCaptionChange}
+                />
+
+                <label>Сделать пост приватным</label>
+                <input 
+                    type="checkbox"
+                    name="post[private]"
+                    value={this.state.private}
+                    onChange={this.handlePrivateChange}
                 />
 
                 <input type="submit" value="Сохранить" onSubmit={this.handleSubmit} />
