@@ -28,7 +28,6 @@ gem 'image_processing', '~> 1.2'
 gem 'aws-sdk-s3', require: false
 gem 'active_storage_validations'
 gem 'rubocop', require: false
-gem 'active_model_serializers'
 gem 'haml'
 gem 'ransack'
 
