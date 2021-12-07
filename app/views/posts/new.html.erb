@@ -1,6 +1,1 @@
-<h1 class="header">New Post</h1>
-<div class="field">
-    <%= render 'form', post: @post %>
-</div>
-
-<%= link_to 'Back', posts_path %>
+<%= react_component('posts/posts_new', {post: @post, root_path: root_path })%> 
