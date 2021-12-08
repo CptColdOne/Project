@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
-<%= react_component("posts/posts_show", {title: @post.title, image: url_for(@post.image), caption: @post.caption, total_views: @post.total_views})%>
+<%= react_component("posts/posts_show", {
+    title: @post.title, 
+    image: url_for(@post.image), 
+    caption: @post.caption, 
+    total_views: @post.total_views, 
+    post_id: @post.id, 
+    back: posts_path,
+    root: root_path})%>
 
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>

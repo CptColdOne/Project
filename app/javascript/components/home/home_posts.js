@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { ShareButtons } from "../share/share_buttons";
 
 class HomePosts extends React.Component {
   constructor(props){
@@ -30,6 +30,7 @@ class HomePosts extends React.Component {
           <div style={{padding:"10px", display:"inline-block"}}>
             <input className="button" style={{margin:"auto"}} type="button" value="Удалить пост" onClick={() => this.deletePost(item.post_link)}></input>
           </div>
+          <div><ShareButtons url={item.post_link} title={item.title} caption={item.caption} image={item.image}/></div>
         </div>
     )})
   }

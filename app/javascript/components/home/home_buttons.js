@@ -19,19 +19,19 @@ export default class HomeButtons extends React.Component {
     }
 
     renderPostsButton(){
-        return <div style={{padding:"10px"}}>
+        return <div style={{padding:"10px", display:"flex", verticalAlign:"top", textAlign:"center"}}>
             <a href={this.state.posts_path}><input className="button" type="button" value="Посмотреть все посты"></input></a>
         </div>
     }
 
     renderNewPostButton(){
-        return <div style={{padding:"10px"}}>
+        return <div style={{padding:"10px", display:"flex", verticalAlign:"top", textAlign:"center"}}>
             <a href={this.state.new_post_path}><input className="button" type="button" value="Создать новый пост"></input></a>
         </div>
     }
 
     renderEditUserButton(){
-        return <div style={{padding:"10px"}}>
+        return <div style={{padding:"10px", display:"flex", verticalAlign:"top", textAlign:"center"}}>
             <a href={this.state.edit_user_registration_path}><input className="button" type="button" value="Изменить регистрационные данные"></input></a>
         </div>
     }
@@ -39,9 +39,11 @@ export default class HomeButtons extends React.Component {
     render(){
         return (
             <React.Fragment>
-              {this.renderPostsButton()}
-              {this.renderNewPostButton()}
-              {this.renderEditUserButton()}
+                <div>
+                    {this.renderPostsButton()}
+                    {this.renderNewPostButton()}
+                    {this.renderEditUserButton()}
+                </div>
             </React.Fragment>
         );
     }

@@ -94,4 +94,16 @@ a{
     to {
       opacity: 1;
     }
-  }
+}
+
+.share-buttons {
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    filter: brightness(1);
+}
+
+.share-buttons:hover {
+    filter: brightness(1.35);
+}

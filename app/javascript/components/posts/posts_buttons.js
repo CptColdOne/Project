@@ -17,13 +17,13 @@ export default class PostsButtons extends React.Component {
     }
 
     renderNewPostButton(){
-        return <div style={{padding:"10px"}}>
+        return <div style={{padding:"10px", display:"flex", verticalAlign:"top", textAlign:"center"}}>
             <a href={this.state.new_post_path}><input className="button" type="button" value="Создать новый пост"></input></a>
         </div>
     }
 
     renderBackButton(){
-        return <div style={{padding:"10px"}}>
+        return <div style={{padding:"10px", display:"flex", verticalAlign:"top", textAlign:"center"}}>
             <a href={this.state.root_path}><input className="button" type="button" value="Вернуться на домашню страницу"></input></a>
         </div>
     }

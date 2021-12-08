@@ -60,7 +60,7 @@ export default class Edit extends React.Component {
         };
 
         fetch(url, {
-            method: 'PATCH',
+            method: 'PUT',
             headers: {
                 "X-CSRF-Token": csrfToken,
                 // 'Content-Type': 'multipart/form-data'
