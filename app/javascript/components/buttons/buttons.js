@@ -8,7 +8,8 @@ export default class Buttons extends React.Component {
             root: "",
             posts: "",
             new_post: "",
-            edit_reg: "test"
+            edit_reg: "",
+            log_out: ""
         }
     }
 
@@ -17,7 +18,8 @@ export default class Buttons extends React.Component {
             root: this.props.root_path,
             posts: this.props.posts_path,
             new_post: this.props.new_post_path,
-            edit_reg: this.props.edit_reg
+            edit_reg: this.props.edit_reg,
+            log_out: this.props.log_out
         })
     }
 
@@ -45,6 +47,25 @@ export default class Buttons extends React.Component {
                 </div>
     }
 
+    renderLogOutButton(){
+        return <div style={{padding:"10px", display:"inline-block", verticalAlign:"top", textAlign:"center"}}>
+                    <input className="button" type="button" value="Выйти" onClick={() => this.logOut(this.state.log_out)}></input>
+                </div>
+    }
+
+    logOut = (e) => {
+        const csrfToken = document.querySelector("[name='csrf-token']").content
+        fetch(e, {
+            method: "delete",
+            headers: {
+                "X-CSRF-Token": csrfToken
+              }
+        })
+        .then(() => {
+            window.location.reload();
+        })
+    }
+
     render(){
         return(
             <React.Fragment>
@@ -53,6 +74,7 @@ export default class Buttons extends React.Component {
                     {this.renderPostsButton()}
                     {this.renderNewPostButton()}
                     {this.renderEditUserButton()}
+                    {this.renderLogOutButton()}
                 </div>
             </React.Fragment>
         )
