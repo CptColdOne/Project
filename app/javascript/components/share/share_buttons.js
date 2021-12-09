@@ -1,5 +1,5 @@
 import React from "react";
-import { FacebookShareButton, FacebookIcon, VKShareButton, VKIcon, TelegramShareButton, TelegramIcon } from "react-share";
+import { FacebookShareButton, FacebookIcon, VKShareButton, VKIcon, TelegramShareButton, TelegramIcon, WhatsappShareButton, WhatsappIcon, } from "react-share";
 import "../home/home.scss";
 
 export function ShareButtons(props) {
@@ -24,6 +24,11 @@ export function ShareButtons(props) {
                 <TelegramShareButton url={url} title={title}>
                     <TelegramIcon size={40} round={true}/>
                 </TelegramShareButton>
+            </div>
+            <div className="share-buttons">
+                <WhatsappShareButton url={url} title={title} quote={caption}>
+                    <WhatsappIcon size={40} round={true}/>
+                </WhatsappShareButton>
             </div>
         </div>
     )
