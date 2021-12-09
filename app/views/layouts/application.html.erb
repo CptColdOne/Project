@@ -14,12 +14,15 @@
 
   <body>
     <% unless params[:controller] == 'devise/registrations' || params[:controller] == 'devise/sessions' || params[:controller] == 'devise/passwords' %>
-      <%= form_tag(search_path, :method => "get") do %>
-          <div style="text-align: right;">
-            <%= search_field_tag :search, params[:search], placeholder: "Найти...", class: "form-control" %>
-            <%= button_tag "Поиск", :name => nil %>
-          </div>
-      <% end %>
+      <div style="text-align: right;">
+        <%= react_component("buttons/buttons", {root_path: root_path, posts_path: posts_path, new_post_path: new_post_path, edit_reg: edit_user_registration_path})%>
+        <%= form_tag(search_path, :method => "get") do %>
+            <div style="text-align: right;">
+              <%= search_field_tag :search, params[:search], placeholder: "Найти...", class: "form-control" %>
+              <%= button_tag "Поиск", :name => nil %>
+            </div>
+        <% end %>
+      </div>
     <% end %>
 
     <p class="notice"><%= notice %></p>

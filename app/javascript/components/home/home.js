@@ -1,7 +1,6 @@
 import React from "react";
 import "./home.scss";
 import HomePosts from "./home_posts";
-import HomeButtons from "./home_buttons";
 import ScrollButton from "./home_scroll_button";
 
 export default class Home extends React.Component {
@@ -33,7 +32,6 @@ export default class Home extends React.Component {
                     {this.renderHeader()}
                     {this.renderPageBody()}
                     <HomePosts posts={this.props.posts}/>
-                    <HomeButtons posts_path={this.props.posts_path} new_post_path={this.props.new_post_path} edit_user_registration_path={this.props.edit_user_registration_path}/>
                 </div>
                 <ScrollButton />
             </React.Fragment>

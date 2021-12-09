@@ -9,7 +9,6 @@ export default class Edit extends React.Component {
             image: [],
             caption: "",
             private: false,
-            root_path: "",
             post_id: null
         };
         this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -21,7 +20,6 @@ export default class Edit extends React.Component {
 
     componentDidMount(){
         this.setState({
-            root_path: this.props.root_path,
             post_id: this.props.post_id
         })
     }
@@ -124,9 +122,6 @@ export default class Edit extends React.Component {
             <React.Fragment>
                 <h1 className="posts-header">Редактирование поста</h1>
                 {this.renderForm()}
-                <div style={{padding:"10px"}}>
-                    <a href={this.state.root_path}><input className="button" type="button" value="Вернуться на домашню страницу"></input></a>
-                </div>
             </React.Fragment>
         );
     }

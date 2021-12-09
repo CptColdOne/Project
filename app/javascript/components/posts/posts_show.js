@@ -10,9 +10,7 @@ export default class Show extends React.Component{
             image: undefined,
             caption: "",
             total_views: 0,
-            post_id: null,
-            back: "",
-            root: ""
+            post_id: null
         };
     }
 
@@ -22,9 +20,7 @@ export default class Show extends React.Component{
             image: this.props.image,
             caption: this.props.caption,
             total_views: this.props.total_views,
-            post_id: this.props.post_id,
-            back: this.props.back,
-            root: this.props.root
+            post_id: this.props.post_id
         })
     }
 
@@ -41,24 +37,10 @@ export default class Show extends React.Component{
         )
     }
 
-    renderBackButton(){
-        return <div style={{padding:"10px", display:"flex", verticalAlign:"top", textAlign:"center"}}>
-                    <a href={this.state.back}><input className="button" type="button" value="Все посты"></input></a>
-            </div>
-    }
-    
-    renderHomeButton(){
-        return <div style={{padding:"10px", display:"flex", verticalAlign:"top", textAlign:"center"}}>
-                    <a href={this.state.root}><input className="button" type="button" value="Домашняя страница"></input></a>
-            </div>
-    }
-
     render(){
         return(
             <React.Fragment>
                 {this.renderPost()}
-                {this.renderBackButton()}
-                {this.renderHomeButton()}
             </React.Fragment>
         )
     }
