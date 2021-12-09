@@ -1,6 +1,6 @@
 import React from "react";
 import "./posts.scss";
-import ScrollButton from "../home/home_scroll_button";
+import ScrollButton from "../buttons/scroll_button";
 import { AllPosts } from "./posts_all";
 
 export default class Posts extends React.Component{

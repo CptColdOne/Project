@@ -1,4 +1,5 @@
 import React from "react";
+import "../home/home.scss"
 
 export default class ScrollButton extends React.Component {
     constructor(props) {

@@ -1,7 +1,7 @@
 import React from "react";
 import "./home.scss";
 import HomePosts from "./home_posts";
-import ScrollButton from "./home_scroll_button";
+import ScrollButton from "../buttons/scroll_button";
 
 export default class Home extends React.Component {
     constructor(props){

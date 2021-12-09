@@ -13,6 +13,9 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
     <% unless params[:controller] == 'devise/registrations' || params[:controller] == 'devise/sessions' || params[:controller] == 'devise/passwords' %>
       <div style="text-align: right;">
         <%= react_component("buttons/buttons", {root_path: root_path, posts_path: posts_path, new_post_path: new_post_path, edit_reg: edit_user_registration_path, log_out: destroy_user_session_path})%>
@@ -24,9 +27,6 @@
         <% end %>
       </div>
     <% end %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
     <%= yield %>
   </body>
